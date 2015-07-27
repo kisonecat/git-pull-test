@@ -13,12 +13,6 @@
 \newenvironment{blinkblock}{}{}
 \newcommand{\blink}[1]{#1}
 
-\ifdefined\HCode
-\ConfigureEnv{blinkblock}{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="blink">}}{\HCode{</div>}\IgnoreIndent}{}{}
-\newcommand{\blink}[1]{\HCode{<span class="blink">}#1\HCode{</div>}}
-\fi
-
-
 \outcome{}
 
 \newcommand{\RS}{r^s}
@@ -26,6 +20,12 @@
 \title[Break-Ground:]{Short thing}
 
 \begin{document}
+
+\ifdefined\HCode
+\ConfigureEnv{blinkblock}{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="blink">}}{\HCode{</div>}\IgnoreIndent}{}{}
+\renewcommand{\blink}[1]{\HCode{<span class="blink">}#1\HCode{</span>}}
+\fi
+
 \begin{abstract}
 Here we see a dialogue where two young mathematicians discuss limits
 and instantaneous velocity.
