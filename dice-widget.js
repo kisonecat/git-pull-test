@@ -7,7 +7,7 @@ define(['jquery', 'database'], function(jquery) {
 	
 	$('.dice').each( function(dice) {
 	    var button = $(buttonHtml);
-	    dice.append( button );
+	    $(dice).append( button );
 	});
 
     });
