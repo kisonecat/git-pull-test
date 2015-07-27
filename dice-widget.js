@@ -12,8 +12,8 @@ define(['jquery', 'database'], function($) {
 
 	    dice.persistentData(function(event) {
 		if ('roll' in event.data) {
-		    button.find('.dice-roll').text( event.data.roll );
-		    button.find('.dice-roll').show();
+		    dice.find('.dice-roll').text( event.data.roll );
+		    dice.find('.dice-roll').show();
 		}
 	    });
 	    
@@ -21,8 +21,5 @@ define(['jquery', 'database'], function($) {
 		dice.persistentData('roll', Math.floor(Math.random() * 6) + 1);
 	    });
 	});
-
     });
 });
-
-
