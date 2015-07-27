@@ -6,8 +6,8 @@ define(['jquery', 'database'], function($) {
 
 	console.log( "Document is ready" );
 	
-	$('.dice').each( function(dice) {
-	    dice = $(dice);
+	$('.dice').each( function() {
+	    dice = $(this);
 	    
 	    var button = $(buttonHtml);
 	    dice.prepend( button );
