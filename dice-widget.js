@@ -4,19 +4,23 @@ define(['jquery', 'database'], function($) {
     
     $(document).ready( function() {
 
+	console.log( "Document is ready" );
+	
 	$('.dice').each( function(dice) {
+	    dice = $(dice);
+	    
 	    var button = $(buttonHtml);
-	    $(dice).append( button );
+	    dice.prepend( button );
 
-	    $(dice).persistentData(function(event) {
+	    dice.persistentData(function(event) {
 		if ('roll' in event.data) {
-		    $(dice).find('.dice-roll').text( event.data.roll );
-		    $(dice).find('.dice-roll').show();
+		    dice.find('.dice-roll').text( event.data.roll );
+		    dice.find('.dice-roll').show();
 		}
 	    });
 	    
-	    $(dice).click( function() {
-		$(dice).persistentData('roll', Math.floor(Math.random() * 6) + 1);
+	    dice.click( function() {
+		dice.persistentData('roll', Math.floor(Math.random() * 6) + 1);
 	    });
 	});
 
