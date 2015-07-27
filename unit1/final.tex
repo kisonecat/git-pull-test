@@ -1,28 +1,32 @@
 \documentclass{ximera}
-%% handout
-%% nohints
+
 \title{The End of Unit 1}
 
 \begin{document}
+\newenvironment{highlighterblock}{}{}
+\newcommand{\highlighter}[1]{#1}
+\ifdefined\HCode
+\ConfigureEnv{highlighterblock}{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="highlighter">}}{\HCode{</div>}\IgnoreIndent}{}{}
+\renewcommand{\highlighter}[1]{\HCode{<span class="highlighter">}#1\HCode{</span>}}
+\fi
 
 \begin{abstract}
   Finishing up the beginning.
 \end{abstract}
 
-This is the LAST part of the first unit.
+This is the \highlighter{LAST} part of the first unit.
 
 \begin{exercise}
   Here is a multiple choice problem.
-  \begin{solution}
-    \begin{multiple-choice}
-      \choice{Wrong answer A}
-      \choice{Wrong answer B}
-      \choice{Wrong answer C}
-      \choice[correct]{Correct answer D}
-    \end{multiple-choice}
+
+  \begin{multiple-choice}
+    \choice{Wrong answer A}
+    \choice{Wrong \highlighter{answer} B}
+    \choice{Wrong answer C}
+    \choice[correct]{Correct answer D}
   \end{solution}
 
-  Here is some text after the multiple choice.
+  Here is \highlighter{some text} after the multiple choice.
 \end{exercise}
 
 \end{document}

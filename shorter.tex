@@ -10,8 +10,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Here is an example of building a new HTML div
-\newenvironment{blinkblock}{}{}
-\newcommand{\blink}[1]{#1}
 
 \outcome{}
 
@@ -20,7 +18,8 @@
 \title[Break-Ground:]{Short thing}
 
 \begin{document}
-
+\newenvironment{blinkblock}{}{}
+\newcommand{\blink}[1]{#1}
 \ifdefined\HCode
 \ConfigureEnv{blinkblock}{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="blink">}}{\HCode{</div>}\IgnoreIndent}{}{}
 \renewcommand{\blink}[1]{\HCode{<span class="blink">}#1\HCode{</span>}}
