@@ -8,21 +8,15 @@
 \newcommand{\dfn}{\textbf}
 \newcommand{\eval}[1]{\bigg[ #1 \bigg]}
 
-\colorlet{textColor}{black} 
-\colorlet{background}{white}
-\colorlet{penColor}{blue!50!black} % Color of a curve in a plot
-\colorlet{penColor2}{red!50!black}% Color of a curve in a plot
-\colorlet{penColor3}{red!50!blue} % Color of a curve in a plot
-\colorlet{penColor4}{green!50!black} % Color of a curve in a plot
-\colorlet{penColor5}{orange!80!black} % Color of a curve in a plot
-\colorlet{fill1}{blue!50!black!20} % Color of fill in a plot
-\colorlet{fill2}{blue!10} % Color of fill in a plot
-\colorlet{fillp}{fill1} % Color of positive area
-\colorlet{filln}{red!50!black!20} % Color of negative area
-\colorlet{gridColor}{gray!50} % Color of grid in a plot
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Here is an example of building a new HTML div
+\newenvironment{blinkblock}{}{}
+\newcommand{\blink}[1]{#1}
 
-%% makes a snazzy t-chart for evaluating functions
-\newenvironment{tchart}{\rowcolors{2}{}{background!90!textColor}\array}{\endarray}
+\ifdefined\HCode
+\ConfigureEnv{blinkblock}{\ifvmode \IgnorePar\fi \EndP\HCode{<div class="blink">}}{\HCode{</div>}\IgnoreIndent}{}{}
+\newcommand{\blink}[1]{\HCode{<span class="blink">}#1\HCode{</div>}}
+\fi
 
 
 \outcome{}
@@ -38,6 +32,10 @@ and instantaneous velocity.
 \end{abstract}
 
 \maketitle
+
+So I wanted to demonstrate building a new div from within TeX.
+
+Here's some \blink{blinking text}.  I miss the \blink{blink tags}.
 
 \begin{problem}
 
