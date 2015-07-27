@@ -4,8 +4,6 @@ define(['jquery', 'database'], function($) {
     
     $(document).ready( function() {
 
-	console.log( "Document is ready" );
-	
 	$('.dice').each( function() {
 	    dice = $(this);
 	    
@@ -14,8 +12,8 @@ define(['jquery', 'database'], function($) {
 
 	    dice.persistentData(function(event) {
 		if ('roll' in event.data) {
-		    dice.find('.dice-roll').text( event.data.roll );
-		    dice.find('.dice-roll').show();
+		    button.find('.dice-roll').text( event.data.roll );
+		    button.find('.dice-roll').show();
 		}
 	    });
 	    
