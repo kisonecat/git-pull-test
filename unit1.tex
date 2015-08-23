@@ -1,4 +1,4 @@
-\PassOptionsToClass{tikzexport}{ximera}\nonstopmode\documentclass{ximera}
+\documentclass{ximera}
 %% handout
 %% nohints
 \title{This is again Unit 1}
@@ -13,7 +13,6 @@
 
 \begin{exercise}
 Given that $s(k)=-k^2-4 k+2$, evaluate $s(4.5)$. Express your answer in decimal notation.
-\begin{solution}
 \begin{hint}
 $s(4.5)=-(4.5)^2-4 (4.5)+2$.
 \end{hint}
@@ -21,7 +20,6 @@ $s(4.5)=-(4.5)^2-4 (4.5)+2$.
 $s(4.5)=-36.25$.
 \end{hint}
 The value of the function $s(k)=-k^2-4 k+2$, evaluated at $k=4.5$, is \answer{-36.25}.
-\end{solution}
 
 Here is some text after the first problem.
 \end{exercise}
@@ -30,28 +28,10 @@ Here is some text after the first problem.
 \begin{exercise}
 Let's again find a function $f(x)$ so that $f(2) = 4$.
 
-\begin{solution}
 \begin{hint}
 Try a linear function.
 \end{hint}
-An example is $f(x) = $ \begin{expression-answer}
-  function validator(f) {
-    if (f.variables().indexOf('x') == -1) {
-      feedback( 'You should include an $x$ in your answer.' );
-    }
-
-    if (f.variables().length > 1) {
-      feedback( 'The only variable you should use is $x$.' );
-    }
-
-    if (abs(f.evaluate( {x:2} ) - 4.0) < 0.0001)
-      return 1;
-
-    feedback( 'Check what happens when you plug in $x=2$.' );
-    return 0;
-  }
-\end{expression-answer}.
-\end{solution}
+An example is $f(x) = 3$.
 
 That is a great example.
 \end{exercise}
@@ -59,14 +39,12 @@ That is a great example.
 \begin{exercise}
   Here is a multiple choice problem.
 
-  \begin{solution}
-    \begin{multiple-choice}
+    \begin{multipleChoice}
       \choice{Wrong answer A}
       \choice{Wrong answer B}
       \choice{Wrong answer C}
       \choice[correct]{Correct answer D}
-    \end{multiple-choice}
-  \end{solution}
+    \end{multipleChoice}
 
   Here is some text after the multiple choice.
 \end{exercise}
@@ -182,3 +160,4 @@ That is a great example.
 % Changed at Wed Jul 29 10:16:41 EDT 2015
 % Changed at Wed Jul 29 10:20:02 EDT 2015
 % Changed at Wed Jul 29 10:30:49 EDT 2015
+% Changed at Sun Aug 23 12:28:23 EDT 2015
